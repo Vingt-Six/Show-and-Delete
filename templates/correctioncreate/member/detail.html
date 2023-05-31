@@ -1,0 +1,11 @@
+{% extends 'correctioncreate/base.html' %}
+
+{% block content %}
+    <h1>Je suis sur la page de l'id : {{ show.id }}</h1>
+    <h1>{{ show.name }}</h1>
+    <h3>{{ show.age }} {{ show.email }} {{ show.gender }}</h3>
+    <form action="/member/destroy/{{ show.id }}" method='POST'>
+        {% csrf_token %}
+        <button type="submit" class='btn btn-danger'>Delete</button>
+    </form>
+{% endblock content %}

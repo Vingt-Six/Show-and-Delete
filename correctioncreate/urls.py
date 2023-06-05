@@ -23,4 +23,5 @@ urlpatterns = [
     path('member/create/', create, name='membercreate'),
     path('member/<int:id>', read, name='detail'),
     path('member/destroy/<int:id>', destroy),
+    path('member/edit/<int:id>', update),
 ]

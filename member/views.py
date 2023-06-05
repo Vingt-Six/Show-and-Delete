@@ -21,6 +21,17 @@ def read(request, id):
     show = Member.objects.get(id=id)
     return render(request, 'correctioncreate/member/detail.html', {"show": show})
 
+def update(request, id):
+    edit = Member.objects.get(id=id)
+    if request.method == 'POST':
+        form = MemberForm(request.POST, instance=edit)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = MemberForm(instance=edit)
+    return render(request, 'correctioncreate/member/edit.html', {'form': form})
+
 def destroy(request, id):
     destroy = Member(id)
     destroy.delete()

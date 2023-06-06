@@ -5,7 +5,7 @@ from .models import Member
 # Create your views here.
 def home(request):
     members = Member.objects.all()
-    return render(request, 'correctioncreate/member/member.html', {'members': members})
+    return render(request, 'correctioncreate/back/member/member.html', {'members': members})
 
 def create(request):
     if request.method == 'POST':
@@ -15,11 +15,11 @@ def create(request):
             return redirect('home')
     else:
         form = MemberForm()
-    return render(request, 'correctioncreate/member/createmember.html', {'form': form})
+    return render(request, 'correctioncreate/back/member/createmember.html', {'form': form})
 
 def read(request, id):
     show = Member.objects.get(id=id)
-    return render(request, 'correctioncreate/member/detail.html', {"show": show})
+    return render(request, 'correctioncreate/back/member/detail.html', {"show": show})
 
 def update(request, id):
     edit = Member.objects.get(id=id)
@@ -30,7 +30,7 @@ def update(request, id):
             return redirect('home')
     else:
         form = MemberForm(instance=edit)
-    return render(request, 'correctioncreate/member/edit.html', {'form': form})
+    return render(request, 'correctioncreate/back/member/edit.html', {'form': form})
 
 def destroy(request, id):
     destroy = Member(id)

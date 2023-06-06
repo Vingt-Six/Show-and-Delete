@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from member.views import *
+from front.views import *
+from product.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +26,6 @@ urlpatterns = [
     path('member/<int:id>', read, name='detail'),
     path('member/destroy/<int:id>', destroy),
     path('member/edit/<int:id>', update),
+    path('home/', homepage),
+    path('createproduct/', createproduct),
 ]

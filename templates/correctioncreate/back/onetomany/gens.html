@@ -1,0 +1,19 @@
+{% extends 'correctioncreate/base.html' %}
+
+{% block content %}
+<h1>Je suis la page Gens</h1>
+<a href="/create/genre/" class='btn btn-primary' >Create Genre</a>
+<a href="/create/gens/" class='btn btn-danger' >Create Gens</a>
+{% comment %} {% for genre in genres %}
+    <p>{{ genre.id }}</p>
+    {% for item in gens %}
+        {% if item.sofia.id == genre.id %}
+            <p class='text-warning' >{{ item.name }} {{ item.sofia.id }} </p>
+        {% endif %}
+    {% endfor %}
+{% endfor %} {% endcomment %}
+
+{% for item in gens %}
+    <p>{{ item.name }} {{ item.sofia }}</p>
+{% endfor %}
+{% endblock content %}

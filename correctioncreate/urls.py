@@ -18,6 +18,7 @@ from django.urls import path
 from member.views import *
 from front.views import *
 from product.views import *
+from onetomany.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +29,7 @@ urlpatterns = [
     path('member/edit/<int:id>', update),
     path('home/', homepage),
     path('createproduct/', createproduct),
+    path('lesgens/', homegens, name='homegens'),
+    path('create/gens/', creategens),
+    path('create/genre/', creategenre),
 ]

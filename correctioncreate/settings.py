@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'member',
     'bootstrap5',
     'product',
+    'onetomany',
 ]
 
 MIDDLEWARE = [
